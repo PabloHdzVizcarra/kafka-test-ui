@@ -1,5 +1,6 @@
 package com.pablohdz.kafkatestui
 
+import javafx.scene.control.TextArea
 import org.apache.kafka.clients.consumer.Consumer
 import org.apache.kafka.clients.consumer.KafkaConsumer
 import org.apache.kafka.common.serialization.StringDeserializer
@@ -13,8 +14,8 @@ class KafkaClient {
         consumer = createConsumer(kafkaServersUrls, kafkaGroupId)
     }
 
-    fun startConsumer(topics: List<String>) {
-        val thread = Thread(SimpleRunnable(consumer, topics))
+    fun startConsumer(topics: List<String>, kafkaProducerOutput: TextArea) {
+        val thread = Thread(SimpleRunnable(consumer, topics, kafkaProducerOutput))
         thread.start()
     }
 

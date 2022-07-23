@@ -37,8 +37,8 @@
     <FlowPane prefHeight="31.0" prefWidth="1159.0">
       <Label alignment="CENTER" prefHeight="27.0" prefWidth="541.0" text="Producer" />
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="618.0" text="Consumer" />
-      <TextArea fx:id="kafkaProducerInput" prefHeight="206.0" prefWidth="1157.0" />
-      <TextArea fx:id="kafkaProducerOutput" prefHeight="181.0" prefWidth="1160.0" />
+      <TextArea fx:id="kafkaProducerInput" prefHeight="457.0" prefWidth="558.0" wrapText="true" />
+      <TextArea fx:id="kafkaProducerOutput" prefHeight="206.0" prefWidth="598.0" wrapText="true" />
     </FlowPane>
   </FlowPane>
   <FlowPane prefHeight="200.0" prefWidth="200.0">

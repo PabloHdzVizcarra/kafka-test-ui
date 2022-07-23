@@ -31,7 +31,6 @@ class HelloController {
 
         kafkaClient.connectKafka(kafkaServersUrls, kafkaGropuId)
 
-        kafkaClient.startConsumer(topicsList)
-
+        kafkaClient.startConsumer(topicsList, kafkaProducerOutput)
     }
 }

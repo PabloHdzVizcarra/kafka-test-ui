@@ -5,6 +5,7 @@ module com.pablohdz.kafkatestui {
     
     requires validatorfx;
     requires kafka.clients;
+    requires org.json;
     
     opens com.pablohdz.kafkatestui to javafx.fxml;
     exports com.pablohdz.kafkatestui;
