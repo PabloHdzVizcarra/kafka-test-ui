@@ -9,10 +9,11 @@ import java.time.Duration
 import java.util.*
 
 
-class SimpleRunnable(private val consumer: Consumer<String, String>,
-                     private val topics: List<String>,
-                     private val producerOutput: TextArea
-): Runnable {
+class SimpleRunnable(
+    private val consumer: Consumer<String, String>,
+    private val topics: List<String>,
+    private val producerOutput: TextArea
+) : Runnable {
     override fun run() {
         consumer.use {
             consumer.subscribe(topics)
@@ -29,7 +30,8 @@ class SimpleRunnable(private val consumer: Consumer<String, String>,
                     val format = SimpleDateFormat("dd-MM-yy HH:mm:ss")
                     val timeFormatter = format.format(date)
 
-                    val logFormatted = "Message TIME: $timeFormatter ||||| from  TOPIC: $topic ||||| MESSAGE:$message \n"
+                    val logFormatted =
+                        "Message TIME: $timeFormatter ||||| from  TOPIC: $topic ||||| MESSAGE:  $message \n"
 
                     producerOutput.appendText(logFormatted)
                     println(logFormatted)
