@@ -1,16 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-  fx:controller="com.pablohdz.kafkatestui.HelloController">
+<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1200.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pablohdz.kafkatestui.HelloController">
   <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
+  <FlowPane prefHeight="34.0" prefWidth="1160.0">
+    <Label alignment="CENTER" prefHeight="17.0" prefWidth="539.0" text="Kafka Servers" />
+    <Label alignment="CENTER" prefHeight="17.0" prefWidth="620.0" text="GroupID" />
+    <TextField fx:id="kafkaServersInput" prefHeight="25.0" prefWidth="556.0">
+      <FlowPane.margin>
+        <Insets right="10.0" />
+      </FlowPane.margin>
+    </TextField>
+    <TextField fx:id="kafkaGroupIdInput" prefHeight="25.0" prefWidth="590.0">
+      <padding>
+        <Insets right="10.0" />
+      </padding>
+    </TextField>
+  </FlowPane>
+  <FlowPane prefHeight="34.0" prefWidth="1160.0">
+    <Label alignment="CENTER" prefHeight="17.0" prefWidth="1158.0" text="Topics" />
+    <TextField fx:id="kafkaTopicsInput" prefHeight="25.0" prefWidth="1159.0" />
+  </FlowPane>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
+  <Label fx:id="welcomeText" />
+  <Button onAction="#onHelloButtonClick" text="Connect To Kafka" />
+  <FlowPane prefHeight="497.0" prefWidth="1160.0">
+    <FlowPane prefHeight="31.0" prefWidth="1159.0">
+      <Label alignment="CENTER" prefHeight="27.0" prefWidth="541.0" text="Producer" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="618.0" text="Consumer" />
+      <TextArea fx:id="kafkaProducerInput" prefHeight="206.0" prefWidth="1157.0" />
+      <TextArea fx:id="kafkaProducerOutput" prefHeight="181.0" prefWidth="1160.0" />
+    </FlowPane>
+  </FlowPane>
+  <FlowPane prefHeight="200.0" prefWidth="200.0">
+    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="159.0" text="Send Notification">
+      <FlowPane.margin>
+        <Insets left="20.0" top="5.0" />
+      </FlowPane.margin>
+    </Button>
+  </FlowPane>
+
 </VBox>
