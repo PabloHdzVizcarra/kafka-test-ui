@@ -3,7 +3,10 @@ package com.pablohdz.kafkatestui
 import javafx.scene.control.TextArea
 import org.apache.kafka.clients.consumer.Consumer
 import org.apache.kafka.clients.consumer.KafkaConsumer
+import org.apache.kafka.clients.producer.KafkaProducer
+import org.apache.kafka.clients.producer.Producer
 import org.apache.kafka.common.serialization.StringDeserializer
+import org.apache.kafka.common.serialization.StringSerializer
 import java.util.*
 
 
@@ -26,5 +29,14 @@ class KafkaClient {
         props["key.deserializer"] = StringDeserializer::class.java
         props["value.deserializer"] = StringDeserializer::class.java
         return KafkaConsumer(props)
+    }
+
+    fun createKafkaProducer(kafkaServersUrls: String): Producer<String, String> {
+        val props = Properties()
+        props["bootstrap.servers"] = kafkaServersUrls
+        props["key.serializer"] = StringSerializer::class.java
+        props["value.serializer"] = StringSerializer::class.java
+        props["enable.idempotence"] = true
+        return KafkaProducer(props)
     }
 }

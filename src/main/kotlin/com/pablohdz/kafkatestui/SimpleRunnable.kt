@@ -3,7 +3,6 @@ package com.pablohdz.kafkatestui
 
 import javafx.scene.control.TextArea
 import org.apache.kafka.clients.consumer.Consumer
-import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.time.Duration
 import java.util.*
