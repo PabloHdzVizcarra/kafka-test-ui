@@ -40,6 +40,7 @@ class HelloController {
         kafkaClient = KafkaClient()
         kafkaClient.connectKafka(kafkaServersUrls, kafkaGropuId)
         kafkaClient.startConsumer(topicsList, kafkaProducerOutput)
+        buttonSendKafkaNotification.isDisable = false
     }
 
     private fun disableButton() {
